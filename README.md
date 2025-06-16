@@ -1,6 +1,47 @@
-Mario Battle Royale:
-Team members - Eric He, Tejas Ram
-Mario Battle Royale is a two player game in which characters fight against each other on a floating stadium, where the last man standing wins.
+# Physics Engine & Game
 
+A 2D physics engine with rigid-body dynamics, convex-polygon collision detection, vector mathematics, scene/state management and a Mario vs Bowser fighting game built on top of it.
 
-The game starts out with two players on each side of the stadium. Players begin with full health and their default starter guns. Throughout the game, there will be floating "special blocks" that will grant different power ups. Players will be able to move around, jump, collect these power ups, and fire/fight each other. Movement will be controlled by the arrow keys and the "WASD" keys, while attacking will be controlled by the "shift" and "Tab" keys. Players will begin with 100 hp, and will lose health based on the quality of attack of the opponent (dependent on power ups). There will also be certain powerups that allow for characters to gain health. The winner will be determined by the player to first make the other player lose all their health. There are no levels in this game, since it is a 1v1 battle royale format. The game incorporates the physics engine through its jumping, and movement. Players will be subject to gravity, and certain powerups will use different types of physics. For example, one type of power up can be an attack/shot that is subject to gravity, while another can travel in a straight line at constant velocity. In addition we would need to implement collision detection to determine when players get hit, run into a wall, or obtain a power up. We will use sprites to create our characters and power up graphics, which we will take from online (Mario), but we will use polygons to create different bullets for different power ups. 
+## Features
+
+- Real-time physics simulation with gravity and collisions
+- 2D rigid body dynamics  
+- Vector math library
+- SDL2 graphics and audio
+- Mario vs Bowser fighting game demo
+
+## Building
+
+Requires SDL2 development libraries:
+
+```bash
+make game
+```
+
+This builds a web version using Emscripten. Access at `http://localhost:8000/bin/game.html`
+
+## Game Controls
+
+- **Arrow Keys**: Move characters
+- **Space**: Jump  
+- **Enter**: Fire projectiles
+- **R**: Restart game
+
+## Game Features
+
+- Two-player Mario vs Bowser combat
+- Power-ups (speed boost, health, invincibility, bombs)
+- Goomba enemies that spawn periodically
+- Mystery boxes with random power-ups
+- Health system with visual indicators
+
+## Physics Engine
+
+Core components in `include/`:
+- `vector.h` - 2D vector operations
+- `body.h` - Rigid body physics
+- `forces.h` - Force applications (gravity, springs, etc.)
+- `collision.h` - Collision detection and response
+- `scene.h` - Physics world management
+
+The engine supports gravity, elastic collisions, and various force applications for realistic 2D physics simulation.
